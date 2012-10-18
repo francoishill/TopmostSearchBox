@@ -72,14 +72,23 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>..\..\..\..\..\Users\francois\Dropbox\Dev\DLLs\WPF Toolkit (Extended)\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="..\..\..\..\..\Users\FrancoisLaptopDell\Dropbox\Dev\VSprojects\SharedClasses\WPFthemes\ExpressionDark.xaml">
+    <Page Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\WPFthemes\ExpressionDark.xaml">
       <Link>Themes\ExpressionDark.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\WPFthemes\ExpressionLight.xaml">
+      <Link>Themes\ExpressionLight.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -127,6 +136,21 @@
     <Compile Include="..\..\SharedClasses\AboutWindow2.xaml.cs">
       <Link>AboutWindow2.xaml.cs</Link>
       <DependentUpon>AboutWindow2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\AutoUpdating.cs">
+      <Link>AutoUpdating.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\MouseSimulator.cs">
+      <Link>MouseSimulator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\Win32Api.cs">
+      <Link>Win32Api.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\WPFgenericEvents.cs">
+      <Link>WPFgenericEvents.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\WPFrichTextboxHelper.cs">
+      <Link>WPFrichTextboxHelper.cs</Link>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
