@@ -29,10 +29,19 @@ namespace WpfApplication1
 		private const double visiblyOpacity = 0.99;
 		private double initialDragBorderOpacity;
 
+		UserActivityHook mouseHook;
+		//MouseGestures.MouseGestures gesturesMonitor;
 		//TODO: Add items for upload/download (FTP, PHP, Http, etc)
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			mouseHook = new UserActivityHook(true, false, false, false, true);
+			mouseHook.OnGesture += new UserActivityHook.GestureHandler(gestures_Gesture);
+
+			//gesturesMonitor = new MouseGestures.MouseGestures(true, true);
+			//gesturesMonitor.Gesture += new MouseGestures.MouseGestures.GestureHandler(gestures_Gesture);
+			//gesturesMonitor.Enabled = true;
 
 			ActionAfterOperationPerformed = delegate
 			{
@@ -68,6 +77,32 @@ namespace WpfApplication1
 			//};
 			//foreach (var f in fonts)
 			//    tmpcombo.Items.Add(f);
+		}
+
+		private void gestures_Gesture(object sender, UserActivityHook.MouseGestureEventArgs e)
+		{
+			if (e.Gesture == null || e.Gesture.Motions == null)
+				return;
+
+			string gesture = e.Gesture.Motions.ToUpper();
+			ThreadingInterop.DoAction(delegate
+			{
+				if (gesture.Equals("DURLDRL"))
+				{
+					UserMessages.ShowInfoMessage("You spelled Francois.");
+				}
+				else if (gesture.Equals("LDRULR"))
+				{
+					var path = RegistryInterop.GetAppPathFromRegistry("GoogleEarth").Trim('"');
+					if (!File.Exists(path))
+						UserMessages.ShowWarningMessage("Please install Google Earth to use this gesture, cannot find file: " + path);
+					else
+						Process.Start(path);
+				}
+				else
+					UserMessages.ShowInfoMessage("Gesture: " + e.Gesture.Motions);
+			},
+			false);
 		}
 
 		private void OnMessage(string errorMessage, FeedbackMessageTypes feedbackType)
