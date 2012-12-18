@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -100,12 +100,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\WPFthemes\ExpressionDark.xaml">
+    <Page Include="..\..\SharedClasses\WPFthemes\ExpressionDark.xaml">
       <Link>Themes\ExpressionDark.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\WPFthemes\ExpressionLight.xaml">
+    <Page Include="..\..\SharedClasses\WPFthemes\ExpressionLight.xaml">
       <Link>Themes\ExpressionLight.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -124,36 +124,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\fastJSON.cs">
+    <Compile Include="..\..\SharedClasses\fastJSON.cs">
       <Link>fastJSON.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\FeedbackMessageTypes.cs">
+    <Compile Include="..\..\SharedClasses\FeedbackMessageTypes.cs">
       <Link>FeedbackMessageTypes.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\NotifyIconWPF.cs">
+    <Compile Include="..\..\SharedClasses\NotifyIconWPF.cs">
       <Link>NotifyIconWPF.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\ProcessesInterop.cs">
+    <Compile Include="..\..\SharedClasses\ProcessesInterop.cs">
       <Link>ProcessesInterop.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\SettingsInterop.cs">
+    <Compile Include="..\..\SharedClasses\SettingsInterop.cs">
       <Link>SettingsInterop.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\ThreadingInterop.cs">
+    <Compile Include="..\..\SharedClasses\ThreadingInterop.cs">
       <Link>ThreadingInterop.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\UserActivityHook.cs">
+    <Compile Include="..\..\SharedClasses\UserActivityHook.cs">
       <Link>UserActivityHook.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\UserMessages.cs">
+    <Compile Include="..\..\SharedClasses\UserMessages.cs">
       <Link>UserMessages.cs</Link>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\UserMessages.designer.cs">
+    <Compile Include="..\..\SharedClasses\UserMessages.designer.cs">
       <Link>UserMessages.designer.cs</Link>
       <DependentUpon>UserMessages.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\WPFHelper.cs">
+    <Compile Include="..\..\SharedClasses\WPFHelper.cs">
       <Link>WPFHelper.cs</Link>
     </Compile>
     <Compile Include="..\..\SharedClasses\AboutWindow2.xaml.cs">
@@ -217,7 +217,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="..\..\..\..\..\..\..\Francois\Dev\VSprojects\SharedClasses\UserMessages.resx">
+    <EmbeddedResource Include="..\..\SharedClasses\UserMessages.resx">
       <Link>UserMessages.resx</Link>
       <DependentUpon>UserMessages.cs</DependentUpon>
     </EmbeddedResource>
