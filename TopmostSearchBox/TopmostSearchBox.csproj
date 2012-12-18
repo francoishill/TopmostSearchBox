@@ -15,6 +15,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -71,6 +71,9 @@
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -109,6 +112,11 @@
     </Page>
     <Page Include="..\..\SharedClasses\AboutWindow2.xaml">
       <Link>AboutWindow2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\..\SharedClasses\UnhandledExceptionsWindow.xaml">
+      <Link>UnhandledExceptionsWindow.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -152,14 +160,30 @@
       <Link>AboutWindow2.xaml.cs</Link>
       <DependentUpon>AboutWindow2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\..\SharedClasses\AppTypeIndependant.cs">
+      <Link>AppTypeIndependant.cs</Link>
+    </Compile>
     <Compile Include="..\..\SharedClasses\AutoUpdating.cs">
       <Link>AutoUpdating.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\CalledFromService.cs">
+      <Link>CalledFromService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\DeveloperCommunication.cs">
+      <Link>DeveloperCommunication.cs</Link>
     </Compile>
     <Compile Include="..\..\SharedClasses\MouseSimulator.cs">
       <Link>MouseSimulator.cs</Link>
     </Compile>
+    <Compile Include="..\..\SharedClasses\ReflectionInterop.cs">
+      <Link>ReflectionInterop.cs</Link>
+    </Compile>
     <Compile Include="..\..\SharedClasses\RegistryInterop.cs">
       <Link>RegistryInterop.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\UnhandledExceptionsWindow.xaml.cs">
+      <Link>UnhandledExceptionsWindow.xaml.cs</Link>
+      <DependentUpon>UnhandledExceptionsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\..\SharedClasses\Win32Api.cs">
       <Link>Win32Api.cs</Link>

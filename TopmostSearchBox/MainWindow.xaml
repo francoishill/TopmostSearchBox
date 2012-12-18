@@ -11,7 +11,6 @@
 		WindowState='Normal'
 		Loaded='Window_Loaded'
 		Topmost='True'
-		Icon='app.ico'
 		ShowInTaskbar='False'
 		ShowActivated='False'
 		Background='Transparent'
@@ -19,7 +18,7 @@
 	<Window.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
-				<ResourceDictionary Source='Themes/ExpressionDark.xaml' />
+				<!--<ResourceDictionary Source='Themes/ExpressionDark.xaml' />-->
 				<ResourceDictionary>
 					<SolidColorBrush x:Key='brushDropAreaBackgroud'
 									 Color='#11ffffff' />
@@ -73,7 +72,7 @@
 					 MouseLeave='transparentGrid_MouseLeave'
 					 AllowDrop='False'
 					 ScrollViewer.CanContentScroll='False'
-					 Background='Transparent'>
+					 Background='#11333333'>
 				<ListBox.Resources>
 					<Style TargetType='ListBoxItem'>
 						<Style.Resources>
@@ -86,6 +85,8 @@
 								Value='0' />
 						<Setter Property='Margin'
 								Value='0' />
+						<Setter Property='Background'
+								Value='Transparent' />
 					</Style>
 				</ListBox.Resources>
 				<ListBox.ItemsPanel>
@@ -100,7 +101,8 @@
 						<ListBox Name='groupItemListbox'
 								 ItemsSource='{Binding DropAreas}'
 								 BorderThickness='0'
-								 Margin='10'>
+								 Margin='10'
+								 Background='Transparent'>
 							<ListBox.ItemsPanel>
 								<ItemsPanelTemplate>
 									<StackPanel Orientation='Horizontal' />
@@ -114,6 +116,7 @@
 											CornerRadius='10'
 											BorderThickness='1'
 											BorderBrush='#444'
+											Background='#222'
 											VerticalAlignment='Stretch'
 											AllowDrop='True'
 											DragOver='itemMainBorder_DragOver'
@@ -179,7 +182,7 @@
 							  Grid.Column='1'
 							  IsDocumentEnabled='True'
 							  BorderThickness='0'
-							  Background='#444'>
+							  Background='#aa000000'>
 				<!--<xctk:RichTextBox.Resources>
 					<Style TargetType="{x:Type sharedclasses:MessagesParagraph}">
 						<Setter Property="Margin"

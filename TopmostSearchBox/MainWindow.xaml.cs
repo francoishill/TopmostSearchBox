@@ -36,7 +36,7 @@ namespace WpfApplication1
 		{
 			InitializeComponent();
 
-			mouseHook = new UserActivityHook(true, false, false, false, true);
+			mouseHook = new UserActivityHook(true, false, false, false, true, true);
 			mouseHook.OnGesture += new UserActivityHook.GestureHandler(gestures_Gesture);
 
 			//gesturesMonitor = new MouseGestures.MouseGestures(true, true);
@@ -190,7 +190,7 @@ namespace WpfApplication1
 		private Border GetMainBorderOfItem(DropArea dropItem)
 		{
 			var groupListboxItem = (ListBoxItem)listboxDropAreas.ItemContainerGenerator.ContainerFromItem(GetDropAreaGroupOfDropAreaItem(dropItem));
-			ContentPresenter myContentPresenter = WPFHelper.GetVisualChild<ContentPresenter>(groupListboxItem);
+			ContentPresenter myContentPresenter = WPFHelper.FindVisualChild<ContentPresenter>(groupListboxItem);
 			DataTemplate myDataTemplate = myContentPresenter.ContentTemplate;
 			ListBox groupitemListbox = (ListBox)myDataTemplate.FindName("groupItemListbox", myContentPresenter);
 			for (int i = 0; i < groupitemListbox.Items.Count; i++)
@@ -199,7 +199,7 @@ namespace WpfApplication1
 				var dropareaListboxItem = (ListBoxItem)groupitemListbox.ItemContainerGenerator.ContainerFromItem(groupitemListbox.Items[i]);
 				if (dropareaListboxItem.DataContext == dropItem)
 				{
-					ContentPresenter myContentPresenter2 = WPFHelper.GetVisualChild<ContentPresenter>(dropareaListboxItem);
+					ContentPresenter myContentPresenter2 = WPFHelper.FindVisualChild<ContentPresenter>(dropareaListboxItem);
 					DataTemplate myDataTemplate2 = myContentPresenter2.ContentTemplate;
 					return (Border)myDataTemplate2.FindName("itemMainBorder", myContentPresenter2);
 				}
@@ -348,17 +348,25 @@ namespace WpfApplication1
 			SetStackPanelItemWidth();
 		}
 
+		Dictionary<Border, Brush> previousBorderBrush = new Dictionary<Border, Brush>();
 		private void HighLightBorder(Border border)
 		{
 			//border.BorderBrush = Brushes.Red;
-			border.Background = (Brush)Resources.MergedDictionaries[1]["DropItemHighlightBackground"];
+			
+			//border.Background = (Brush)Resources.MergedDictionaries[1]["DropItemHighlightBackground"];			
+			////Must now use MergedDictionaries[0] because we remove the ExpressionDark Theme
+			if (previousBorderBrush.ContainsKey(border))
+				previousBorderBrush.Remove(border);
+			previousBorderBrush.Add(border, border.Background);
+			border.Background = (Brush)Resources.MergedDictionaries[0]["DropItemHighlightBackground"];
 		}
 
 		private void RemoveHighLightBorder(Border border)
 		{
 			//border.BorderBrush = Brushes.Transparent;
-			border.Background = Brushes.Transparent;
-
+			if (previousBorderBrush.ContainsKey(border))
+				border.Background = previousBorderBrush[border];
+			//border.Background = Brushes.Transparent;
 		}
 
 		private void itemMainBorder_DragEnter(object sender, DragEventArgs e)
