@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace WpfApplication1
+namespace TopmostSearchBox
 {
 	/// <summary>
 	/// Interaction logic for App.xaml
@@ -17,6 +17,9 @@ namespace WpfApplication1
 			SharedClasses.AutoUpdating.CheckForUpdates_ExceptionHandler();
 			//SharedClasses.AutoUpdating.CheckForUpdates(null, null, true);
 			base.OnStartup(e);
+
+			TopmostSearchBox.MainWindow mw = new MainWindow();
+			mw.ShowDialog();
 		}
 	}
 }

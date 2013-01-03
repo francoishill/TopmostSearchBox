@@ -17,7 +17,7 @@ using System.IO;
 using System.Threading;
 using System.Diagnostics;
 
-namespace WpfApplication1
+namespace TopmostSearchBox
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
@@ -486,7 +486,7 @@ namespace WpfApplication1
 			AboutWindow2.ShowAboutWindow(new ObservableCollection<DisplayItem>()
 			{
 				new DisplayItem("Author", "Francois Hill"),
-				new DisplayItem("Hex icon", "http://www.iconarchive.com", "http://www.iconarchive.com/show/oxygen-icons-by-oxygen-icons.org/Mimetypes-text-x-hex-icon.html")
+				new DisplayItem("Icon(s) obtained from (hex icon)", "http://www.iconarchive.com", "http://www.iconarchive.com/show/oxygen-icons-by-oxygen-icons.org/Mimetypes-text-x-hex-icon.html")
 			},
 			true,
 			this);
