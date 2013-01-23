@@ -31,7 +31,6 @@ namespace TopmostSearchBox
 
 		UserActivityHook mouseHook;
 		//MouseGestures.MouseGestures gesturesMonitor;
-		//TODO: Add items for upload/download (FTP, PHP, Http, etc)
 		public MainWindow()
 		{
 			InitializeComponent();
