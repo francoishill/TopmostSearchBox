@@ -4,6 +4,7 @@
 		xmlns:sharedclasses='clr-namespace:SharedClasses'
 		xmlns:forms='clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms'
 		Title='Drag Drop Operations'
+		Icon='app.ico'
 		Height='207'
 		Width='877'
 		AllowsTransparency='True'
